@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="DynamicReports_AM"
+  Version="11.1.1.66.73"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <DesignTime>
+    <Attr Name="_deployType" Value="0"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.fouriApps.model.AM.DynamicReports_AM_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewUsage
+    Name="xxstg_Business_unit1"
+    ViewObjectName="com.fouriApps.model.SUB_VO.xxstg_Business_unit"/>
+  <ViewUsage
+    Name="Businessunit_In_Certification_headers1"
+    ViewObjectName="com.fouriApps.model.SUB_ROVO.Businessunit_In_Certification_headers"/>
+  <ViewUsage
+    Name="ReportPath1"
+    ViewObjectName="com.fouriApps.model.SUB_STA.ReportPath"/>
+  <ViewUsage
+    Name="xxstg_business_units1_rovo"
+    ViewObjectName="com.fouriApps.model.SUB_ROVO.xxstg_business_units"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.fouriApps.model.DynamicReports_ModelBundle"/>
+  </ResourceBundle>
+</AppModule>

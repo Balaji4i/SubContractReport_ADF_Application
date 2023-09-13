@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="xxstg_Business_unit"
+  Version="11.1.1.66.73"
+  InheritPersonalization="merge"
+  SelectList="xxstg_businessunits.BU_ID, 
+       xxstg_businessunits.BU_NAME, 
+       xxstg_businessunits.BUSINESS_GROUP_ID, 
+       xxstg_businessunits.DATE_FROM, 
+       xxstg_businessunits.DATE_TO, 
+       xxstg_businessunits.DEFAULT_CURRENCY_CODE, 
+       xxstg_businessunits.DEFAULT_SET_ID, 
+       xxstg_businessunits.ENABLED_FOR_HR_FLAG, 
+       xxstg_businessunits.FIN_BUSINESS_UNIT_ID, 
+       xxstg_businessunits.LE_TYPE, 
+       xxstg_businessunits.LEGAL_ENTITY_ID, 
+       xxstg_businessunits.LOCATION_ID, 
+       xxstg_businessunits.MANAGER_ID, 
+       xxstg_businessunits.PRIMARY_LEDGER_ID, 
+       xxstg_businessunits.PROFIT_CENTER_FLAG, 
+       xxstg_businessunits.SHORT_CODE, 
+       xxstg_businessunits.STATUS"
+  FromList="XXSTG_BUSINESS_UNITS xxstg_businessunits"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.fouriApps.model.SUB_VO.xxstg_Business_unit_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="Businessunit_In_Certification_headers1"
+    ViewObjectName="com.fouriApps.model.SUB_ROVO.Businessunit_In_Certification_headers"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ReportPath1"
+    ViewObjectName="com.fouriApps.model.SUB_STA.ReportPath"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_BuName"
+    ListVOName="Businessunit_In_Certification_headers1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BuName"/>
+    </AttrArray>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="BuId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="BuName"/>
+      <Item Value="BuId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="BuName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ReportPath"
+    ListVOName="ReportPath1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ReportPath"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LOOKUP_VALUE_NAME"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="LOOKUP_VALUE_NAME_DISP"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="xxstg_businessunits"
+    Entity="com.fouriApps.model.SUB_EO.xxstg_businessunits"/>
+  <ViewAttribute
+    Name="BuId"
+    PrecisionRule="true"
+    EntityAttrName="BuId"
+    EntityUsage="xxstg_businessunits"
+    AliasName="BU_ID"/>
+  <ViewAttribute
+    Name="BuName"
+    PrecisionRule="true"
+    EntityAttrName="BuName"
+    EntityUsage="xxstg_businessunits"
+    AliasName="BU_NAME"
+    LOVName="LOV_BuName">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BusinessGroupId"
+    PrecisionRule="true"
+    EntityAttrName="BusinessGroupId"
+    EntityUsage="xxstg_businessunits"
+    AliasName="BUSINESS_GROUP_ID"/>
+  <ViewAttribute
+    Name="DateFrom"
+    PrecisionRule="true"
+    EntityAttrName="DateFrom"
+    EntityUsage="xxstg_businessunits"
+    AliasName="DATE_FROM"/>
+  <ViewAttribute
+    Name="DateTo"
+    PrecisionRule="true"
+    EntityAttrName="DateTo"
+    EntityUsage="xxstg_businessunits"
+    AliasName="DATE_TO"/>
+  <ViewAttribute
+    Name="DefaultCurrencyCode"
+    PrecisionRule="true"
+    EntityAttrName="DefaultCurrencyCode"
+    EntityUsage="xxstg_businessunits"
+    AliasName="DEFAULT_CURRENCY_CODE"/>
+  <ViewAttribute
+    Name="DefaultSetId"
+    PrecisionRule="true"
+    EntityAttrName="DefaultSetId"
+    EntityUsage="xxstg_businessunits"
+    AliasName="DEFAULT_SET_ID"/>
+  <ViewAttribute
+    Name="EnabledForHrFlag"
+    PrecisionRule="true"
+    EntityAttrName="EnabledForHrFlag"
+    EntityUsage="xxstg_businessunits"
+    AliasName="ENABLED_FOR_HR_FLAG"/>
+  <ViewAttribute
+    Name="FinBusinessUnitId"
+    PrecisionRule="true"
+    EntityAttrName="FinBusinessUnitId"
+    EntityUsage="xxstg_businessunits"
+    AliasName="FIN_BUSINESS_UNIT_ID"/>
+  <ViewAttribute
+    Name="LeType"
+    PrecisionRule="true"
+    EntityAttrName="LeType"
+    EntityUsage="xxstg_businessunits"
+    AliasName="LE_TYPE"/>
+  <ViewAttribute
+    Name="LegalEntityId"
+    PrecisionRule="true"
+    EntityAttrName="LegalEntityId"
+    EntityUsage="xxstg_businessunits"
+    AliasName="LEGAL_ENTITY_ID"/>
+  <ViewAttribute
+    Name="LocationId"
+    PrecisionRule="true"
+    EntityAttrName="LocationId"
+    EntityUsage="xxstg_businessunits"
+    AliasName="LOCATION_ID"/>
+  <ViewAttribute
+    Name="ManagerId"
+    PrecisionRule="true"
+    EntityAttrName="ManagerId"
+    EntityUsage="xxstg_businessunits"
+    AliasName="MANAGER_ID"/>
+  <ViewAttribute
+    Name="PrimaryLedgerId"
+    PrecisionRule="true"
+    EntityAttrName="PrimaryLedgerId"
+    EntityUsage="xxstg_businessunits"
+    AliasName="PRIMARY_LEDGER_ID"/>
+  <ViewAttribute
+    Name="ProfitCenterFlag"
+    PrecisionRule="true"
+    EntityAttrName="ProfitCenterFlag"
+    EntityUsage="xxstg_businessunits"
+    AliasName="PROFIT_CENTER_FLAG"/>
+  <ViewAttribute
+    Name="ShortCode"
+    PrecisionRule="true"
+    EntityAttrName="ShortCode"
+    EntityUsage="xxstg_businessunits"
+    AliasName="SHORT_CODE"/>
+  <ViewAttribute
+    Name="Status"
+    PrecisionRule="true"
+    EntityAttrName="Status"
+    EntityUsage="xxstg_businessunits"
+    AliasName="STATUS"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.fouriApps.model.DynamicReports_ModelBundle"/>
+  </ResourceBundle>
+  <ViewAttribute
+    Name="ReportPath"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LOV_ReportPath">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+</ViewObject>

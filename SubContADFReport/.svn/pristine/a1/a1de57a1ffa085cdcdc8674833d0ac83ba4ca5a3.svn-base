@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html">
+  <af:pageTemplate viewId="/oracle/apps/uikit/common/pageTemplates/MainPageTemplate.jspx"
+                   id="pt1">
+    <f:facet name="pageContents">
+      <af:group id="g1">
+        <af:panelStretchLayout id="psl1" startWidth="50%" endWidth="49%" styleClass="AFStretchWidth"
+                               inlineStyle="height:16.0cm;">
+          <f:facet name="center"/>  
+        <f:facet name="start">
+          <af:panelGroupLayout id="pgl3" layout="vertical">
+              <af:panelBox text="Approved PC Report" id="pb1" disclosed="false">
+                <f:facet name="toolbar"/>
+                <af:panelFormLayout id="pfl1" maxColumns="1" rows="5"
+                                    labelWidth="250" fieldWidth="200">
+                  <f:facet name="footer"/>
+                  <af:selectOneChoice value="#{bindings.BuName1.inputValue}"
+                                      label="Business Unit"
+                                      required="#{bindings.BuName1.hints.mandatory}"
+                                      shortDesc="#{bindings.BuName1.hints.tooltip}"
+                                      id="soc3" autoSubmit="true" contentStyle="width:200.0px;">
+                    <f:selectItems value="#{bindings.BuName1.items}" id="si3"/>
+                  </af:selectOneChoice>
+                  <af:inputDate label="Date" id="id2"
+                                contentStyle="width:200.0px;"
+                                autoSubmit="true"
+                                binding="#{backingBeanScope.SubContractReportBb.date1}"/>
+                  <af:selectOneChoice value="#{bindings.ReportFormat.inputValue}"
+                                      label="Report Format"
+                                      required="#{bindings.ReportFormat.hints.mandatory}"
+                                      shortDesc="#{bindings.ReportFormat.hints.tooltip}"
+                                      id="soc4" autoSubmit="true" contentStyle="width:200.0px;"
+                                      binding="#{backingBeanScope.SubContractReportBb.reportFormat}">
+                    <f:selectItems value="#{bindings.ReportFormat.items}"
+                                   id="si4"/>
+                  </af:selectOneChoice>
+                  <af:commandButton text="Download" id="cb1"
+                              actionListener="#{backingBeanScope.SubContractReportBb.onClickDownload}"/>
+                </af:panelFormLayout>
+              </af:panelBox>
+              <af:spacer width="10" height="10" id="s1"/>
+              <af:panelBox text="Project Costing Report" id="pb2"
+                           disclosed="false">
+                <f:facet name="toolbar"/>
+                <af:panelFormLayout id="pfl2" maxColumns="1" rows="5"
+                                    fieldWidth="200" labelWidth="250">
+                  <f:facet name="footer"/>
+                  <af:selectOneChoice value="#{bindings.BuName1.inputValue}"
+                                      label="Business Unit"
+                                      required="#{bindings.BuName1.hints.mandatory}"
+                                      shortDesc="#{bindings.BuName1.hints.tooltip}"
+                                      id="soc1" autoSubmit="true" contentStyle="width:200.0px;">
+                    <f:selectItems value="#{bindings.BuName1.items}" id="si1"/>
+                  </af:selectOneChoice>
+                  <af:selectOneChoice value="#{bindings.ReportFormat.inputValue}"
+                                      label="Report Format"
+                                      required="#{bindings.ReportFormat.hints.mandatory}"
+                                      shortDesc="#{bindings.ReportFormat.hints.tooltip}"
+                                      id="soc2" autoSubmit="true" contentStyle="width:200.0px;"
+                    binding="#{backingBeanScope.SubContractReportBb.reportFormat}">
+                    <f:selectItems value="#{bindings.ReportFormat.items}"
+                                   id="si2"/>
+                  </af:selectOneChoice>
+                  <af:commandButton text="Download" id="cb2"
+                                    actionListener="#{backingBeanScope.SubContractReportBb.onClickProCostingDownload}"/>
+                </af:panelFormLayout>
+              </af:panelBox>
+            </af:panelGroupLayout>
+        </f:facet>
+          <f:facet name="end"/>
+        </af:panelStretchLayout>
+      </af:group>
+    </f:facet>
+  </af:pageTemplate>
+</jsp:root>
